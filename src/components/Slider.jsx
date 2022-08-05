@@ -8,16 +8,22 @@ export default function Slider() {
 
     return (
         <div className='slider-cont'>
-            <p>X():</p>
-            <input type="range" min="1" max="100" />
+            <p>X({xPos}px):</p>
+            <input type="range" min="0" max="300" onChange={(e) => {
+                setXPos(() => e.target.value)
+            }} />
             <br />
             <br />
-            <p>Y():</p>
-            <input type="range" min="1" max="100" />
+            <p>Y({yPos}px):</p>
+            <input type="range" min="0" max="300" onChange={(e) => {
+                setYPos(() => e.target.value)
+            }} />
             <br />
             <br />
-            <p>Rotate():</p>
-            <input type="range" min="-90" max="90" />
+            <p>Rotate({rotate}deg):</p>
+            <input type="range" min="-90" max="90" onChange={(e) => {
+                setRotate(() => e.target.value)
+            }} />
         </div>
     )
 }
